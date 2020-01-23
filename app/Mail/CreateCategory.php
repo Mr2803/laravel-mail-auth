@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class DeleteCategory extends Mailable
+class CreateCategory extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -39,7 +39,7 @@ class DeleteCategory extends Mailable
         $name = $this -> name;
         $author = $this -> author;
         
-        return $this->view('mails.deleteCategory' , 
+        return $this->view('mails.createCategory' , 
                             compact("type","name","author"));
     }
 }

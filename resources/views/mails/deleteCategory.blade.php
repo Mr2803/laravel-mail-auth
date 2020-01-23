@@ -1,1 +1,1 @@
-{{ $type}} : {{$name}} è stata eliminata
+{{ $type}}  {{$name}} è stata eliminata da {{$author}}

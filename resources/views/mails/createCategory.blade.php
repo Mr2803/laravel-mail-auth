@@ -1,0 +1,1 @@
+{{ $type}} : {{$name}} da {{$author}}
