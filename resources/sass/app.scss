@@ -1,0 +1,58 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+body{
+background:rgb(83, 78, 78);
+color:white;
+.row.globalLogOrNot{
+background:rgb(29, 27, 27);
+
+    .logOrNot{
+        display:flex;
+        justify-content: flex-end;
+        font-size: 20px;
+    }
+}
+.nav-link {
+    color:white;
+    text-transform: uppercase;
+    &:hover{
+        color:rgb(153, 12, 12);
+    }
+}
+h5{
+text-transform: uppercase;
+
+}
+
+.categories{
+    margin-bottom:10px;
+    display:flex;
+    flex-wrap: wrap;
+    .card{
+        
+        width:calc(100% / 6);
+        color:black;
+        margin:30px;
+        text-transform: uppercase;
+        font-weight: bold;
+        &:hover{
+            background-color:rgba(153, 12, 12,0.8);;
+        }
+    }
+}
+
+.pict{
+    display:none;
+}
+
+footer{
+    background: #333A40;
+}
+}
