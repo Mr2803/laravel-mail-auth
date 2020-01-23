@@ -20,11 +20,11 @@
  <div class="categories">
     @foreach ($category -> posts as $post)
     <div class="card" >
-                    <img class="card-img-top" src="{{url($post -> pict)}}" alt="Card image cap">
-                    <div class="card-body">
-                    <p class="card-text">{{$post -> title}}</p>
-                    </div>
-                    </div>
+        <img class="card-img-top" src="{{url($post -> pict)}}" alt="Card image cap">
+        <div class="card-body">
+        <p class="card-text">{{$post -> title}}</p>
+        </div>
+        </div>
     @endforeach
 </div>
 @endsection

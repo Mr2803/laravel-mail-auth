@@ -11361,6 +11361,22 @@ body {
   color: white;
 }
 
+body .blur {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+}
+
+body .loggedIn {
+  min-height: 79vh;
+  padding: 150px;
+}
+
+body .loggedIn .card {
+  color: black;
+}
+
 body .row.globalLogOrNot {
   background: #1d1b1b;
 }
@@ -11371,6 +11387,14 @@ body .row.globalLogOrNot .logOrNot {
   -webkit-box-pack: end;
           justify-content: flex-end;
   font-size: 20px;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+body .row.globalLogOrNot .logOrNot a:first-child {
+  margin-right: 20px;
+  font-size: 13px;
+  line-height: middle;
 }
 
 body .nav-link {

@@ -23,4 +23,4 @@ Route::post('/category/post/{id}', 'MyController@categoryPostCreate') -> name('c
 
 Auth::routes();
 
-Route::get('/yourlogin', 'HomeController@index')->name('yourlogin');
+Route::get('/home', 'HomeController@index')->name('home');

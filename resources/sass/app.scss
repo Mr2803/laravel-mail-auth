@@ -10,6 +10,20 @@
 body{
 background:rgb(83, 78, 78);
 color:white;
+.blur{
+    -webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+}
+.loggedIn{
+    min-height: 79vh;
+    padding : 150px;
+    .card{
+        color:black;
+    }
+}
+
 .row.globalLogOrNot{
 background:rgb(29, 27, 27);
 
@@ -17,6 +31,12 @@ background:rgb(29, 27, 27);
         display:flex;
         justify-content: flex-end;
         font-size: 20px;
+        align-items: center;
+        a:first-child{
+            margin-right: 20px;
+            font-size: 13px;
+            line-height: middle;
+        }
     }
 }
 .nav-link {
