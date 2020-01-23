@@ -16,9 +16,9 @@
             <div class="logOrNot">
 
                 @auth
-                 <a href={{route("login")}}>{{Auth::user() -> name}} </a> 
+                 <a href={{route("yourlogin")}}>{{Auth::user() -> name}} </a> 
                 @else
-                    <a href="{{route("login")}}">Login</a>
+                    <a href="{{route("yourlogin")}}">Login</a>
                 @endauth
             </div>
             

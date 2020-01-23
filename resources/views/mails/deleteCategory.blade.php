@@ -1,0 +1,1 @@
+{{ $type}} : {{$name}} è stata eliminata

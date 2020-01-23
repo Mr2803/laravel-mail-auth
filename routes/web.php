@@ -15,12 +15,12 @@ Route::get('/', "MyController@index") -> name("home.index");
 Route::get('/category/show/{id}', "MyController@categoryShow") -> name("category.show") ->middleware('auth');
 Route::get('/delete/{id}', "MyController@categoryDelete") -> name("category.delete");
 
-Route::get('/create', "MyController@categoryCreate") -> name("category.create");
-Route::post('/store', "MyController@categoryStore") -> name("category.store");
+Route::get('/create', "MyController@categoryCreate") -> name("category.create") -> middleware('auth');
+Route::post('/store', "MyController@categoryStore") -> name("category.store") -> middleware('auth');
 
-Route::get('/category/post/{id}', 'MyController@categoryPost') -> name('category.post');
-Route::post('/category/post/{id}', 'MyController@categoryPostCreate') -> name('category.post.create');
+Route::get('/category/post/{id}', 'MyController@categoryPost') -> name('category.post') -> middleware('auth');
+Route::post('/category/post/{id}', 'MyController@categoryPostCreate') -> name('category.post.create') -> middleware('auth');
 
 Auth::routes();
 
-Route::get('/login', 'HomeController@index')->name('login');
+Route::get('/yourlogin', 'HomeController@index')->name('yourlogin');

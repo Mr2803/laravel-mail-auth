@@ -7,6 +7,10 @@ use App\Category;
 use App\Post;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Mail;
+
+use App\Mail\DeleteCategory;
+
 class MyController extends Controller
 {
     public function index (){
@@ -24,6 +28,10 @@ class MyController extends Controller
         $category = Category::findOrFail($id);
         $category -> posts() -> delete();
         $category -> delete();
+
+         Mail::to("mr2803@mail.com")->send(new DeleteCategory(
+             "Category", $category -> name
+         ));
        return redirect() -> route('home.index');
     }
 
@@ -38,7 +46,12 @@ class MyController extends Controller
 
     public function categoryPost($id) {
         $category = Category::findOrFail($id);
-        return view('pages.categoryPost', compact('category'));
+        $mypict = array("/img/img1.jpg", "/img/img2.jpg","/img/img3.jpg", "/img/img4.jpg","/img/img5.jpg");
+        $picture = $mypict[array_rand($mypict)];
+        return view('pages.categoryPost', [
+            'category' => $category,
+            'picture' => $picture
+        ]);//compact('category', 'picture'));
     }
 
     public function categoryPostCreate(PostRequest $request, $id) {

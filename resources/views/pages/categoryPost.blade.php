@@ -27,9 +27,7 @@
             <label for="body">Body:</label><br>
             <input type="text" name="body"><br><br>
             <label class= for="pict"></label>
-            <input class= "pict" type="text" name="pict" value ="<?php 
-            $mypict = array("/img/img1.jpg", "/img/img2.jpg","/img/img3.jpg", "/img/img4.jpg","/img/img5.jpg");
-            echo $mypict[array_rand($mypict)]; ?>">
+            <input class= "pict" type="text" name="pict" value ="{{$picture}}">
             <button type="submit" name="submit" value="ADD">Aggiungi</button>
             </form>
             </div>
