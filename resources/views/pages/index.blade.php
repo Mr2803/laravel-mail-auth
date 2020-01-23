@@ -7,9 +7,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="{{route("home.index")}}"><i class="fas fa-home"></i><span class="sr-only">(current)</span></a>
-      </li>
+      
       @foreach ($categories as $category)
       <li class="nav-item">
         <a class="nav-link" href="{{route("category.show",$category-> id)}}">{{$category -> name}}</a>
@@ -38,21 +36,30 @@
               <p class="nav-link blur"> AGGIUNGI POST <i class="fas fa-plus"></i> </p> <p class="nav-link"> Per sbloccare questa funzione <a href="{{ route('login') }}"> accedi</a></p> 
             @endauth
                 <div class="categories">
-                @foreach ($category -> posts as $post)
-                <div class="card" >
+                  @auth
+                      
+                  @foreach ($category -> posts as $post)
+                  <div class="card" >
                     <img class="card-img-top" src="{{url($post -> pict)}}" alt="Card image cap">
                     <div class="card-body">
-                    <p class="card-text">{{$post -> title}}</p>
+                      <p class="card-text">{{$post -> title}}</p>
                     </div>
+                  </div>
+                  @endforeach
+                  @else
+                  @foreach ($category -> posts as $post)
+                  <div class="card" >
+                    <img class="card-img-top blur" src="{{url($post -> pict)}}" alt="Card image cap">
+                    <div class="card-body">
+                      <p class="card-text">{{$post -> title}}</p>
                     </div>
-               {{--  <div class="post">
-            
-                    
-                </div> --}}
-                
-              
-            
-            @endforeach
+                  </div>
+                  @endforeach
+                  
+                  
+                  
+                  
+                  @endauth
             </div>
             @endforeach
         </div>
